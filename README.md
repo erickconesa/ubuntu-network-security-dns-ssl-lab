@@ -303,11 +303,82 @@ No me limité a verificar que el temporizador existía. Ejecuté renovaciones si
 
 ---
 
-## 📁 Documentación
 
-El repositorio incluye documentación complementaria y evidencias organizadas por controles técnicos.
+## 📁 Documentación técnica
 
-Los archivos con credenciales, tokens de acceso y claves privadas no forman parte de la documentación pública.
+La documentación del laboratorio está organizada en tres archivos:
+
+- [Arquitectura del laboratorio](docs/architecture.md)
+- [Validación de los cinco controles técnicos](docs/validation.md)
+- [Incidencias y soluciones aplicadas](docs/troubleshooting.md)
+
+## 📸 Evidencias técnicas
+
+Durante la segunda semana se documentaron 15 evidencias reales, organizadas en cinco controles técnicos.
+
+### CT-01 — Firewall UFW
+
+**Política de firewall y servicios expuestos**
+
+![UFW activo](screenshots/ct01-firewall/ev-01-1-ufw-status.png)
+
+![Puertos en escucha](screenshots/ct01-firewall/ev-01-2-listening-ports.png)
+
+![Escaneo Nmap](screenshots/ct01-firewall/ev-01-3-nmap-scan.png)
+
+### CT-02 — Fail2ban
+
+**Servicio activo y bloqueo real por intentos fallidos**
+
+![Servicio Fail2ban](screenshots/ct02-fail2ban/ev-02-1-fail2ban-service.png)
+
+![Jail SSH](screenshots/ct02-fail2ban/ev-02-2-sshd-jail.png)
+
+![Bloqueo de IP](screenshots/ct02-fail2ban/ev-02-3-ssh-ip-ban.png)
+
+### CT-03 — DNS
+
+**Configuración y resolución de registros A y CNAME**
+
+![Registros Dynu](screenshots/ct03-dns/ev-03-1-dynu-records.png)
+
+![Validación registro A](screenshots/ct03-dns/ev-03-2-dig-a-record.png)
+
+![Validación CNAME](screenshots/ct03-dns/ev-03-3-dig-cname-record.png)
+
+### CT-04 — Nginx y SSL/TLS
+
+**Configuración web, emisión y validación del certificado**
+
+![Virtual Host Nginx](screenshots/ct04-tls/ev-04-1-nginx-virtual-host.png)
+
+![Certificado Let's Encrypt](screenshots/ct04-tls/ev-04-2-letsencrypt-certificate.png)
+
+![Validación HTTPS](screenshots/ct04-tls/ev-04-3-https-tls-validation.png)
+
+### CT-05 — Renovación automática
+
+**Certbot, renovación simulada y continuidad HTTPS**
+
+![Temporizador Certbot](screenshots/ct05-renewal/ev-05-1-certbot-timer.png)
+
+![Renovación simulada](screenshots/ct05-renewal/ev-05-2-certbot-dry-run.png)
+
+![Recarga Nginx](screenshots/ct05-renewal/ev-05-3-nginx-reload-https.png)
+
+---
+
+### Resultado final
+
+- 5 controles técnicos validados.
+- 15 evidencias documentadas.
+- Firewall restrictivo y protección frente a fuerza bruta.
+- Resolución DNS verificada.
+- Certificado SSL/TLS emitido correctamente.
+- Renovación automática validada mediante simulación.
+
+**Semana 2 completada — Octubre de 2026.**
+
 
 ---
 
